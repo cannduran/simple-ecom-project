@@ -6,6 +6,8 @@ const ProductCard = (props) => {
     const { id, productName, price, productImage } = props.data;
     const { cartItems, addToCart, removeFromCart } = useContext(shopContext);
 
+    // Burada cart'a kaç tane eklendiğini çekiyoruz.
+    const cartItemAmount = cartItems[id];
 
     return (
         <div className='product'>
@@ -14,7 +16,9 @@ const ProductCard = (props) => {
                 <p><b>{productName}</b></p>
                 <p>{price}</p>
             </div>
-            <button className='addToCartBttn' onClick={() => addToCart(id)}>Add to Cart</button>
+            <button className='addToCartBttn' onClick={() => addToCart(id)}>
+                Add to Cart {cartItemAmount > 0 ? <>({cartItemAmount})</> : ''}
+            </button>
         </div>
     );
 };

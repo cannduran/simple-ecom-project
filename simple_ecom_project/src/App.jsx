@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Components/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Shop from './Pages/Shop/Shop'
-import Cart from './Pages/Cart'
+import Cart from './Pages/Cart/Cart'
 import { ShopContextProvider } from './Context/shop-context'
 const App = () => {
   return (
