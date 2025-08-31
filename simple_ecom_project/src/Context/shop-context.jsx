@@ -30,9 +30,13 @@ export const ShopContextProvider = (props) => {
         // Otomatik olarak prev ismiyle önceki state'i alıyor.
         // Sonra bu state'in  [itemId] değerini alıp 1 çıkarıyor.
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    };
+
+    const updateCartItemCount = (newAmount, itemId) => {
+        setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
     }
 
-    let contextValue = { cartItems, addToCart, removeFromCart }
+    let contextValue = { cartItems, addToCart, removeFromCart, updateCartItemCount }
 
     console.log(cartItems);
     return (
